@@ -145,6 +145,14 @@ function processContains(item, list, callback) {
   return callback(false);
 }
 
+/*
+
+function processContains(item, list, callback) {
+  return callback(list.includes(item));
+}
+
+*/
+
 /**
  * ### Challenge `processDuplicateFree`
  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
@@ -164,8 +172,14 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, callback) {
+  let results = [];
+  for (let item of list) {
+    if (results.includes(item) == false) {
+      results.push(item)
+    }
+  }
+  return callback(results);
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
