@@ -323,8 +323,14 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(maxValue) {
+  let count = 0;
+  return () => {
+    if (count > maxValue) {
+      count = 0;
+    }
+    return count++
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
